@@ -1,0 +1,8 @@
+dev_proxy.py
+node_modules/
+.git/
+.gitignore
+.vscode/
+Dockerfile
+.dockerignore
+*.md
