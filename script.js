@@ -1,6 +1,7 @@
-const API_URL = "http://127.0.0.1:8000";
+// В Docker-окружении запросы идут на тот же origin (Nginx),
+// а Nginx проксирует /api/ → backend:8000
+const API_URL = "/api";
 
-// Отправка текста (v1.0)
 document.getElementById("sendBtn").addEventListener("click", async () => {
     const text = document.getElementById("textInput").value;
     const formData = new FormData();
@@ -16,7 +17,6 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
         "Ответ: " + JSON.stringify(result);
 });
 
-// Получение записи по номеру (v2.0)
 document.getElementById("getBtn").addEventListener("click", async () => {
     const index = document.getElementById("requestInput").value.trim();
     const output = document.getElementById("resultOutput");
